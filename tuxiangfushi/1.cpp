@@ -1,0 +1,19 @@
+#include <opencv2\highgui\highgui.hpp>
+#include <opencv2\imgproc\imgproc.hpp>
+using namespace cv;
+
+int main()
+{
+	// load image
+	Mat srcImage = imread("D:/ex/vsprojects/test_opencv_install/tuxiangfushi/cat.jpg");
+	// show origin image 
+	imshow("¡¾Ô­Í¼¡¿¸¯Ê´²Ù×÷", srcImage);
+	// ×ö¸¯Ê´²Ù×÷ÃüÁî
+	Mat element = getStructuringElement(MORPH_RECT, Size(5, 5));
+	Mat dstImage;
+	erode(srcImage, dstImage, element);
+	// show result
+	imshow("¡¾Ð§¹ûÍ¼¡¿¸¯Ê´²Ù×÷", dstImage);
+	waitKey(0);
+	return 0;
+}
