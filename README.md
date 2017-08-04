@@ -1,2 +1,2 @@
 # opencv_ex
-opencv_exercises
+opencv联系
